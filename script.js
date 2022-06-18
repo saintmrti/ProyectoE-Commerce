@@ -184,13 +184,16 @@ function eliminarProducto() {
 
         document.querySelector(`#btnCar${indice}`).addEventListener('click', () => {
             
-            carrito.eliminar(indice, 1)
-                       
+            //carrito.eliminar(indice, 1)          
+            //localStorage.setItem('carrito', JSON.stringify(carrito.lista))
+
+            let index = carrito.lista.indexOf(producto)
+            
+            carrito.eliminar(index, 1)
             localStorage.setItem('carrito', JSON.stringify(carrito.lista))
-
-            let productoCarrito = divCarrito.querySelector(`#producto${indice}`)
-
-            divCarrito.removeChild(productoCarrito)
+            
+            let productoCar = divCarrito.querySelector(`#producto${indice}`)
+            divCarrito.removeChild(productoCar)
             
         })
     })
