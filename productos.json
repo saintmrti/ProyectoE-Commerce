@@ -1,0 +1,72 @@
+[
+    {
+        "id": 0,
+        "nombre": "iPhone 11 64gb",
+        "marca": "apple",
+        "precio": 10500,
+        "stock": 4
+    },
+    {
+        "id": 1,
+        "nombre": "Moto e20",
+        "marca": "motorola",
+        "precio": 5500,
+        "stock": 2
+    },
+    {
+        "id": 2,
+        "nombre": "SSD 240gb",
+        "marca": "wd green",
+        "precio": 800,
+        "stock": 6
+    },
+    {
+        "id": 3,
+        "nombre": "Galaxy A12",
+        "marca": "samsung",
+        "precio": 3500,
+        "stock": 3
+    },
+    {
+        "id": 4,
+        "nombre": "Laptop Lenovo Thinkpad",
+        "marca": "lenovo",
+        "precio": 11000,
+        "stock": 1
+    },
+    {
+        "id": 5,
+        "nombre": "Galaxy A13",
+        "marca": "samsung",
+        "precio": 4500,
+        "stock": 3
+    },
+    {
+        "id": 6,
+        "nombre": "Bateria Portatil",
+        "marca": "1hora",
+        "precio": 1500,
+        "stock": 4
+    },
+    {
+        "id": 7,
+        "nombre": "Grafica RTX 2060",
+        "marca": "msi",
+        "precio": 8000,
+        "stock": 1
+    },
+    {
+        "id": 8,
+        "nombre": "SSD 512gb",
+        "marca": "xpg",
+        "precio": 3000,
+        "stock": 3
+    },
+    {
+        "id": 9,
+        "nombre": "Procesador Ryzen 5 3600",
+        "marca": "ryzen",
+        "precio": 7500,
+        "stock": 2
+    }
+]

@@ -1,0 +1,67 @@
+/* NavBar Start */
+
+img {
+
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    
+}
+
+#fondo {
+    background-color: #F3F6FF;
+}
+
+.form-control {
+    width: 600px;
+    height: 30px;
+}
+
+#divProductos {
+    display: flex;
+    justify-content: space-between;
+}
+
+#divCarrito {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#btnCarrito {
+    border: none;
+    background-color: transparent;
+    transition: .3s;
+}
+
+#btnCarrito:hover {
+    color: #0D6EFD;
+}
+
+.bi-cart3 {
+    font-size: 2em
+}
+
+.card {
+    border-style: hidden;
+}
+
+@media screen and (max-width: 767px) and (min-width: 375px) {
+    .form-control {
+        width: 200px;
+    }
+
+    #divProductos {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    .form-control {
+        width: 400px;
+    }
+
+    #divProductos {
+        justify-content: center;
+    }
+}
