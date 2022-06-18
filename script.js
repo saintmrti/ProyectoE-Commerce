@@ -83,32 +83,6 @@ function mostrarProductos(productosArray) {
     })
 }
 
-function mostrarCarrito() {
-
-    let divCarrito = document.querySelector('#divCarrito')
-
-    carrito.lista.forEach((producto, indice) => {
-        divCarrito.innerHTML += `
-        <div id="producto${indice}" class="d-flex justify-content-center align-items-center">
-            <div class="card mb-3" style="max-width: 300px;">
-                <div class="row g-0">
-                    <div class="col-4">
-                        <img src="img/${producto.id}.png" class="img-fluid rounded-start" alt="${producto.nombre}">
-                    </div>
-                    <div class="col-8">
-                        <div class="card-body">
-                            <p class="card-text mb-0">${producto.nombre}</p>
-                            <p class="card-text text-primary fw-bold">$${producto.precio}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div><button id="btnCar${indice}" class="btn btn-primary btn-sm bg-danger m-1">-</button></div>
-        </div>
-        `
-    })
-}
-
 function selecProducto() {
     
     deptoElectronica.forEach((producto, indice) => {
@@ -125,7 +99,7 @@ function selecProducto() {
                 localStorage.setItem('carrito', JSON.stringify(carrito.lista))
                 //Agregar a carrito
                 agregarCarrito()
-
+                //eliminamos productos del carrito
                 eliminarProducto()
                 
             } else {
@@ -211,18 +185,13 @@ function eliminarProducto() {
         document.querySelector(`#btnCar${indice}`).addEventListener('click', () => {
             
             carrito.eliminar(indice, 1)
-            divCarrito.innerHTML = ""
-            /*
                        
             localStorage.setItem('carrito', JSON.stringify(carrito.lista))
 
-            let lista = document.querySelector('#divCarrito')
+            let productoCarrito = divCarrito.querySelector(`#producto${indice}`)
 
-            let productoCarrito = lista.querySelector(`#producto${indice}`)
-
-            lista.removeChild(productoCarrito)
+            divCarrito.removeChild(productoCarrito)
             
-            */
         })
     })
 }
