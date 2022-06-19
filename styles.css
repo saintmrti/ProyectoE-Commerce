@@ -37,6 +37,7 @@ img {
     background: none;
     border: none;
     font-weight: bold;
+    color: black;
 }
 
 .btnC:hover {

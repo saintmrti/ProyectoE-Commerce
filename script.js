@@ -37,6 +37,8 @@ const objeto10 = new Productos(9, "procesador ryzen 5 3600", "ryzen", 8500, 2)
 
 const deptoElectronica= [objeto1, objeto2, objeto3, objeto4, objeto5, objeto6, objeto7,objeto8, objeto9, objeto10]
 
+const celulares= [objeto1, objeto2, objeto4, objeto6]
+
 const carrito = new Carrito("default")
 
 if(localStorage.getItem('carrito')) { //Si no existe esto da null
@@ -62,6 +64,7 @@ fetch('productos.json')
 //Funciones
 function inicializar() {
     selecProducto()
+    seleCategorias()
     consultarCarrito()
     eliminarProducto()
 }
@@ -72,7 +75,7 @@ function mostrarProductos(productosArray) {
     productosArray.forEach((producto, indice) => {
         divProductos.innerHTML += `
         <div id="producto${indice}" class="card text-center mb-5 shadow-sm" style="width: 18rem;">
-            <img src="img/${indice}.png" class="card-img-top" alt="${producto.nombre}">
+            <img src="img/${producto.id}.png" class="card-img-top" alt="${producto.nombre}">
             <div class="card-body">
                 <h5 class="card-title">${producto.nombre}</h5>
                 <p class="card-text">$ ${producto.precio}</p>
@@ -81,6 +84,25 @@ function mostrarProductos(productosArray) {
         </div>
         `
     })
+}
+
+function seleCategorias() {
+    
+    document.querySelector("#btnC1").addEventListener('click', () => {
+
+        mostrarCelulares()
+
+    })
+}
+
+function mostrarCelulares() {
+
+    let divProductos = document.querySelector('#divProductos')
+
+    let producto = divProductos.querySelector(`#producto2`)
+    divProductos.removeChild(producto)
+    
+    
 }
 
 function selecProducto() {
@@ -108,7 +130,7 @@ function selecProducto() {
                     duration: 2000,
                     newWindow: false,
                     close: true,
-                    gravity: "top", 
+                    gravity: "bottom", 
                     position: "right", 
                     stopOnFocus: false, 
                     style: {
@@ -123,6 +145,19 @@ function selecProducto() {
 function agregarCarrito() {
 
     let divCarrito = document.querySelector('#divCarrito')
+
+    Toastify({
+        text: "Producto Añadido",
+        duration: 2000,
+        newWindow: false,
+        close: true,
+        gravity: "bottom", 
+        position: "right", 
+        stopOnFocus: false, 
+        style: {
+          background: "#5AC768"
+        }
+      }).showToast();
 
     divCarrito.innerHTML = ""
 
