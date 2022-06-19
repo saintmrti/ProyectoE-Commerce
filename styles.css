@@ -28,6 +28,21 @@ img {
     justify-content: center;
 }
 
+#aC {
+    text-decoration: none;
+    color: black;
+}
+
+.btnC {
+    background: none;
+    border: none;
+    font-weight: bold;
+}
+
+.btnC:hover {
+    color: #0D6EFD;
+}
+
 #btnCarrito {
     border: none;
     background-color: transparent;
