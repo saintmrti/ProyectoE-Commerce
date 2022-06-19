@@ -37,7 +37,17 @@ const objeto10 = new Productos(9, "procesador ryzen 5 3600", "ryzen", 8500, 2)
 
 const deptoElectronica= [objeto1, objeto2, objeto3, objeto4, objeto5, objeto6, objeto7,objeto8, objeto9, objeto10]
 
+//Los siguientes arrays contienen los productos que NO pertenecen a la categoria
+
 const celulares= [objeto3, objeto5, objeto7, objeto8, objeto9, objeto10]
+
+const laptops = [objeto1, objeto2, objeto3, objeto4, objeto6, objeto7, objeto8, objeto9, objeto10]
+
+const procesadores = [objeto1, objeto2, objeto3, objeto4, objeto5, objeto6, objeto7, objeto8, objeto9]
+
+const graficas = [objeto1, objeto2, objeto3, objeto4, objeto5, objeto6, objeto7, objeto9, objeto10]
+
+const almacenamiento = [objeto1, objeto2, objeto4, objeto5, objeto6, objeto7, objeto8, objeto10]
 
 const carrito = new Carrito("default")
 
@@ -94,12 +104,37 @@ function seleCategorias() {
     
     document.querySelector("#btnC1").addEventListener('click', () => {
 
-        mostrarCelulares()
+        mostrarCategorias(celulares)
 
     })
+
+    document.querySelector("#btnC2").addEventListener('click', () => {
+
+        mostrarCategorias(laptops)
+
+    })
+
+    document.querySelector("#btnC3").addEventListener('click', () => {
+
+        mostrarCategorias(procesadores)
+
+    })
+
+    document.querySelector("#btnC4").addEventListener('click', () => {
+
+        mostrarCategorias(graficas)
+
+    })
+
+    document.querySelector("#btnC5").addEventListener('click', () => {
+
+        mostrarCategorias(almacenamiento)
+
+    })
+
 }
 
-function mostrarCelulares() {
+function mostrarCategorias(array) {
 
     let divProductos = document.querySelector('#divProductos')
 
@@ -108,11 +143,11 @@ function mostrarCelulares() {
     mostrarProductos(productosArray)
     selecProducto()
 
-    celulares.forEach(producto => {
+    array.forEach(producto => {
         
         let eliminaProducto = divProductos.querySelector(`#producto${producto.id}`)
         divProductos.removeChild(eliminaProducto)
-    });
+    })
     
     
 }
@@ -148,7 +183,7 @@ function selecProducto() {
                     style: {
                       background: "#DF4747"
                     }
-                  }).showToast();
+                  }).showToast()
             }
         })
     })
