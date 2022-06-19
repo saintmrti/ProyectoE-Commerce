@@ -41,6 +41,8 @@ const celulares= [objeto3, objeto5, objeto7, objeto8, objeto9, objeto10]
 
 const carrito = new Carrito("default")
 
+let productosArray = []
+
 if(localStorage.getItem('carrito')) { //Si no existe esto da null
     //Conversion de JSON a Objeto
     carrito.lista = JSON.parse(localStorage.getItem('carrito'))
@@ -55,7 +57,9 @@ fetch('productos.json')
 .then(response => response.json())
 .then(productos => {
 
-    mostrarProductos(productos)
+    productosArray = productos
+
+    mostrarProductos(productosArray)
 
     inicializar()
 
@@ -98,6 +102,11 @@ function seleCategorias() {
 function mostrarCelulares() {
 
     let divProductos = document.querySelector('#divProductos')
+
+    divProductos.innerHTML = ""
+
+    mostrarProductos(productosArray)
+    selecProducto()
 
     celulares.forEach(producto => {
         
