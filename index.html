@@ -41,10 +41,31 @@
         </nav>
     </header>
     <main>
-        <div class="container-xxl bg-white p-5">
+        <div class="container-xxl bg-white pt-5">
             <div class="row">
                 <div class="col-md-3">
-                    <a id="aC" data-bs-toggle="collapse" href="#menu" role="button" aria-expanded="false" aria-controls="menu"><h2 class="h5 mx-3 p-3 shadow-sm rounded"><i class="bi bi-justify"></i> CATEGORÍAS</h2></a>
+                    <div id="carouselPromos" class="carousel slide carousel-fade mb-3" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="img/promo1.jpg" class="d-block w-100" alt="promo1">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/promo2.jpg" class="d-block w-100" alt="promo2">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/promo3.jpg" class="d-block w-100" alt="promo3">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPromos" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselPromos" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <a class="aC mb-3" data-bs-toggle="collapse" href="#menu" role="button" aria-expanded="false" aria-controls="menu"><h2 class="h5 mx-3 p-3 shadow-sm rounded"><i class="bi bi-justify"></i> CATEGORÍAS</h2></a>
                     <ul id="menu" class="collapse" style="list-style: none;">
                         <li ><button id="btnC1" class="btnC mb-2">Célulares</button></li>
                         <li ><button id="btnC2" class="btnC mb-2">Laptops</button></li>
@@ -52,6 +73,14 @@
                         <li ><button id="btnC4" class="btnC mb-2">Tarjetas De Video</button></li>
                         <li ><button id="btnC5" class="btnC mb-2">Almacenamiento</button></li>
                     </ul>
+                    <a class="aC mb-3" data-bs-toggle="collapse" href="#filtro" role="button" aria-expanded="false" aria-controls="filtro"><h2 class="h5 mx-3 p-3 shadow-sm rounded"><i class="bi bi-filter"></i> FILTRO</h2></a>
+                    <form id="filtro" class="collapse">
+                        <div class="pt-3 p-5 d-flex flex-wrap justify-content-center">
+                            <label for="rangeSlider"><h3 class="h5 mb-3">Precio: </h3></label>
+                            <input class="mb-3 m-1" id="rangeSlider" type="range" min="800" max="10000">
+                            <input class="btn btn-primary" type="submit" value="Aplicar" style="width: 200px;">
+                        </div>
+                    </form>
                 </div>
                 <div class="col-md-9">
                     <div id="divProductos" class="row"></div>
@@ -70,9 +99,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-<!--
-    <div class="col-md-10">
-        <div id="divProductos" class="row"></div>
-    </div>
--->

@@ -30,7 +30,7 @@ img {
     justify-content: center;
 }
 
-#aC {
+.aC {
     text-decoration: none;
     color: black;
 }
@@ -69,6 +69,10 @@ img {
         width: 200px;
     }
 
+    #fondo {
+        background-color: white;
+    }
+
     #divProductos {
         justify-content: center;
     }
@@ -77,6 +81,10 @@ img {
 @media screen and (max-width: 1024px) and (min-width: 768px) {
     .form-control {
         width: 400px;
+    }
+
+    #fondo {
+        background-color: white;
     }
 
     #divProductos {
