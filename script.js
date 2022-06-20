@@ -235,6 +235,8 @@ function consultarCarrito() {
     let divCarrito = document.querySelector('#divCarrito')
     
     let arrayCarrito = JSON.parse(localStorage.getItem('carrito'))
+
+    arrayCarrito.length === 0 && (divCarrito.innerHTML = `<h2 class="h6 d-flex justify-content-center">Ups! No tienes nada en tu carrito ):</h2>`)
     
     arrayCarrito.forEach((producto, indice) => {
         divCarrito.innerHTML += `
@@ -266,8 +268,7 @@ function eliminarProducto() {
 
         document.querySelector(`#btnCar${indice}`).addEventListener('click', () => {
             
-            //carrito.eliminar(indice, 1)          
-            //localStorage.setItem('carrito', JSON.stringify(carrito.lista))
+            console.log(carrito.lista)
 
             let index = carrito.lista.indexOf(producto)
             
@@ -276,7 +277,8 @@ function eliminarProducto() {
             
             let productoCar = divCarrito.querySelector(`#producto${indice}`)
             divCarrito.removeChild(productoCar)
-            
+
+            carrito.lista.length === 0 && (divCarrito.innerHTML = `<h2 class="h6 d-flex justify-content-center">Ups! No tienes nada en tu carrito ):</h2>`)
         })
     })
 }
