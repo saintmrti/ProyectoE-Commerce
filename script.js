@@ -101,37 +101,20 @@ function mostrarProductos(productosArray) {
 }
 
 function seleCategorias() {
+
+    for (let i = 1; i < 6; i++) {
+
+        document.querySelector(`#btnC${i}`).addEventListener('click', () => {
+
+            i === 1 && mostrarCategorias(celulares)
+            i === 2 && mostrarCategorias(laptops)
+            i === 3 && mostrarCategorias(procesadores)
+            i === 4 && mostrarCategorias(graficas)
+            i === 5 && mostrarCategorias(almacenamiento)
     
-    document.querySelector("#btnC1").addEventListener('click', () => {
-
-        mostrarCategorias(celulares)
-
-    })
-
-    document.querySelector("#btnC2").addEventListener('click', () => {
-
-        mostrarCategorias(laptops)
-
-    })
-
-    document.querySelector("#btnC3").addEventListener('click', () => {
-
-        mostrarCategorias(procesadores)
-
-    })
-
-    document.querySelector("#btnC4").addEventListener('click', () => {
-
-        mostrarCategorias(graficas)
-
-    })
-
-    document.querySelector("#btnC5").addEventListener('click', () => {
-
-        mostrarCategorias(almacenamiento)
-
-    })
-
+        })
+        
+    }
 }
 
 function mostrarCategorias(array) {
@@ -168,6 +151,8 @@ function selecProducto() {
                 localStorage.setItem('carrito', JSON.stringify(carrito.lista))
                 //Agregar a carrito
                 agregarCarrito()
+                //calculamos total del carrito
+                calcularCarrito()
                 //eliminamos productos del carrito
                 eliminarProducto()
                 
@@ -187,6 +172,13 @@ function selecProducto() {
             }
         })
     })
+}
+
+function calcularCarrito() {
+    
+    let pedido = carrito.lista.reduce((suma, producto) => suma + producto?.precio || "No existe pedido", 0)
+
+    console.log(pedido)
 }
 
 function agregarCarrito() {
@@ -211,7 +203,7 @@ function agregarCarrito() {
     carrito.lista.forEach((producto, indice) => {
 
         divCarrito.innerHTML += `
-        <div id="producto${indice}" class="d-flex justify-content-center align-items-center">
+        <div id="producto${indice}" class="d-flex justify-content-center">
             <div class="card mb-3" style="max-width: 300px;">
                 <div class="row g-0">
                     <div class="col-4">
@@ -240,7 +232,7 @@ function consultarCarrito() {
     
     arrayCarrito.forEach((producto, indice) => {
         divCarrito.innerHTML += `
-        <div id="producto${indice}" class="d-flex justify-content-center align-items-center">
+        <div id="producto${indice}" class="d-flex justify-content-center">
             <div class="card mb-3" style="max-width: 300px;">
                 <div class="row g-0">
                     <div class="col-4">
@@ -267,13 +259,15 @@ function eliminarProducto() {
     carrito.lista.forEach((producto, indice)=> {
 
         document.querySelector(`#btnCar${indice}`).addEventListener('click', () => {
-            
-            console.log(carrito.lista)
 
             let index = carrito.lista.indexOf(producto)
             
             carrito.eliminar(index, 1)
+
+            calcularCarrito()
+
             localStorage.setItem('carrito', JSON.stringify(carrito.lista))
+
             
             let productoCar = divCarrito.querySelector(`#producto${indice}`)
             divCarrito.removeChild(productoCar)

@@ -56,6 +56,11 @@ img {
     color: #0D6EFD;
 }
 
+#btnCarrito:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 .bi-cart3 {
     font-size: 2em
 }
