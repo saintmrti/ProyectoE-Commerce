@@ -16,18 +16,15 @@
 <body id="fondo">
     <header>
         <nav class="navbar bg-light shadow">
-            <div class="container-fluid d-flex justify-content-center align-items-start">
+            <div class="container-fluid d-flex justify-content-center align-items-center">
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <h2 class="offcanvas-title h5" id="offcanvasNavbarLabel"><i class="bi bi-cart3" style="font-size: 1em;"></i> Mi Carrito</h2>	
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div id="contenido" class="offcanvas-body d-flex justify-content-center flex-wrap">
+                    <div class="offcanvas-body d-flex justify-content-center flex-wrap">
                         <div id="divCarrito" class="align-self-start"></div>
-                        <div class="align-self-end">
-                            <h2 class="h5">Total: $10000</h2>
-                            <a class="btn btn-primary btn-sm" href="" style="width: 300px;">Comprar</a>
-                        </div>
+                        <div id="divCompra" class="align-self-end"></div>
                     </div>
                 </div>
                 <a href="index.html" class="navbar-brand d-flex align-items-end border-end px-4 px-lg-5">
@@ -69,10 +66,8 @@
                           <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    <p>
-                        <a class="aC mb-3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><h3 class="h5 mx-3 p-3 shadow-sm rounded"><i class="bi bi-justify"></i> CATEGORÍAS</h3></a></a>
-                    </p>
-                    <div class="collapse" id="collapseExample">
+                    <a class="aC mb-3" data-bs-toggle="collapse" href="#menu" role="button" aria-expanded="false" aria-controls="menu"><h3 class="h5 mx-3 p-3 shadow-sm rounded"><i class="bi bi-justify"></i> CATEGORÍAS</h3></a></a>
+                    <div class="collapse" id="menu">
                         <div class="card card-body">
                             <ul style="list-style: none;">
                                 <li><button id="btnC1" class="btnC mb-2">Célulares</button></li>
@@ -83,7 +78,6 @@
                             </ul>
                         </div>
                     </div>
-                    
                     <a class="aC mb-3" data-bs-toggle="collapse" href="#filtro" role="button" aria-expanded="false" aria-controls="filtro"><h3 class="h5 mx-3 p-3 shadow-sm rounded"><i class="bi bi-filter"></i> FILTRO</h3></a>
                     <form id="filtro" class="collapse">
                         <div class="pt-3 p-5 d-flex flex-wrap justify-content-center">

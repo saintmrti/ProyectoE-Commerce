@@ -175,10 +175,19 @@ function selecProducto() {
 }
 
 function calcularCarrito() {
-    
+
+    let divCompra = document.querySelector('#divCompra ')
+
     let pedido = carrito.lista.reduce((suma, producto) => suma + producto?.precio || "No existe pedido", 0)
 
     console.log(pedido)
+
+    divCompra.innerHTML = `
+    <h2 class="h5">Total: $${pedido}</h2>
+    <a class="btn btn-primary btn-sm " href="compra.html" onclick="comprarCarrito()" style="width: 300px;">Comprar</a>
+    `
+
+
 }
 
 function agregarCarrito() {
@@ -224,11 +233,16 @@ function agregarCarrito() {
 }
 
 function consultarCarrito() {
+
     let divCarrito = document.querySelector('#divCarrito')
+    let divCompra = document.querySelector('#divCompra ')
     
     let arrayCarrito = JSON.parse(localStorage.getItem('carrito'))
 
+    calcularCarrito()
+
     arrayCarrito.length === 0 && (divCarrito.innerHTML = `<h2 class="h6 d-flex justify-content-center">Ups! No tienes nada en tu carrito ):</h2>`)
+    arrayCarrito.length === 0 && (divCompra.innerHTML = "")
     
     arrayCarrito.forEach((producto, indice) => {
         divCarrito.innerHTML += `
@@ -267,12 +281,20 @@ function eliminarProducto() {
             calcularCarrito()
 
             localStorage.setItem('carrito', JSON.stringify(carrito.lista))
-
             
             let productoCar = divCarrito.querySelector(`#producto${indice}`)
             divCarrito.removeChild(productoCar)
 
             carrito.lista.length === 0 && (divCarrito.innerHTML = `<h2 class="h6 d-flex justify-content-center">Ups! No tienes nada en tu carrito ):</h2>`)
+            carrito.lista.length === 0 && (divCompra.innerHTML = "")
         })
     })
+}
+
+function comprarCarrito() {
+
+    carrito.lista = []
+
+    localStorage.setItem('carrito', JSON.stringify(carrito.lista))
+    
 }
