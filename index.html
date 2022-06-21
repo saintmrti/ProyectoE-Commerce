@@ -81,9 +81,10 @@
                     <a class="aC mb-3" data-bs-toggle="collapse" href="#filtro" role="button" aria-expanded="false" aria-controls="filtro"><h3 class="h5 mx-3 p-3 shadow-sm rounded"><i class="bi bi-filter"></i> FILTRO</h3></a>
                     <form id="filtro" class="collapse">
                         <div class="pt-3 p-5 d-flex flex-wrap justify-content-center">
-                            <label for="rangeSlider"><h4 class="h5 mb-3">Precio: </h4></label>
-                            <input class="mb-3 m-1" id="rangeSlider" type="range" min="800" max="10000">
-                            <input class="btn btn-primary btn-sm" type="submit" value="Aplicar" style="width: 200px;">
+                            <label><h4 class="h5 mb-2">Precio: </h4></label>
+                            <input class="mb-3 m-1" id="inputRango" type="range" min="800" max="10000">
+                            <h4 id="textoRango" class="h6 mb-2">$0 - $5000</h4>
+                            <button id="btnRango" class="btn btn-primary btn-sm" style="width: 200px;">Aplicar</button>
                         </div>
                     </form>
                 </div>

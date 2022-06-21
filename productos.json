@@ -3,14 +3,14 @@
         "id": 0,
         "nombre": "iPhone 11 64gb",
         "marca": "apple",
-        "precio": 10500,
+        "precio": 8500,
         "stock": 4
     },
     {
         "id": 1,
         "nombre": "Moto e20",
         "marca": "motorola",
-        "precio": 5500,
+        "precio": 2500,
         "stock": 2
     },
     {
@@ -24,21 +24,21 @@
         "id": 3,
         "nombre": "Galaxy A12",
         "marca": "samsung",
-        "precio": 3500,
+        "precio": 2999,
         "stock": 3
     },
     {
         "id": 4,
         "nombre": "Laptop Lenovo Thinkpad",
         "marca": "lenovo",
-        "precio": 11000,
+        "precio": 9500,
         "stock": 1
     },
     {
         "id": 5,
         "nombre": "Galaxy A13",
         "marca": "samsung",
-        "precio": 4500,
+        "precio": 3699,
         "stock": 3
     },
     {
@@ -59,7 +59,7 @@
         "id": 8,
         "nombre": "SSD 512gb",
         "marca": "xpg",
-        "precio": 3000,
+        "precio": 1200,
         "stock": 3
     },
     {
